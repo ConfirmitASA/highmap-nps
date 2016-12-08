@@ -1,13 +1,52 @@
-/**
-* @table {HTMLTableElement} table - table element where the data is storage
-* @param {} columnNames - array of column names of data table 
-* @param {String} containerID - container for rendering map 
-* @param {Array} dataClasses - set of colored groups for map
-* @param {String} map - key for Higchart.maps
-* @param {Object} options - options for HighMap chart
-*
-*/
-class HighMapsNPS{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>highmaps-nps.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="HighMapsNPS.html">HighMapsNPS</a><ul class='methods'><li data-type='method'><a href="HighMapsNPS.html#.composeOutput">composeOutput</a></li><li data-type='method'><a href="HighMapsNPS.html#.createMap">createMap</a></li><li data-type='method'><a href="HighMapsNPS.html#.getData">getData</a></li><li data-type='method'><a href="HighMapsNPS.html#.getHeaders">getHeaders</a></li><li data-type='method'><a href="HighMapsNPS.html#.mixin">mixin</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">highmaps-nps.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>class HighMapsNPS{
+  /**
+   * @param {HTMLTableElement} table - table element where the data is storage
+   * @param {Array} columnNames - array of column names of data table
+   * @param {String} containerID - container for rendering map
+   * @param {Array} dataClasses - set of colored groups for map
+   * @param {String} map - key for Higchart.maps
+   * @param {Object} options - options for HighMap chart
+   *
+   */
     constructor({table,columnNames=[],containerID, dataClasses = [{
                   from: 80,
                   to: 100,
@@ -24,6 +63,8 @@ class HighMapsNPS{
                   color: '#f44336',
                   name: 'Detractor'
               }], map,options}={}){
+      if(typeof Highcharts == undefined){throw new Error('Highcharts must be declared. Probably they are missing')}
+      if(typeof Highcharts.maps == undefined){throw new Error('HighMaps must be loaded. Probably they are missing')}
       let data = this.constructor.getData(table,columnNames);
       this.constructor.createMap(options, containerID, data, map, dataClasses,this.constructor.getHeaders(table,columnNames));
     }
@@ -32,11 +73,10 @@ class HighMapsNPS{
     * Strips data from `table`
     * @param {HTMLTableElement} table - table element
     * @param {Array} columnNames - names of columns in resulting object
-    * @returns {Array} returns set of objects 
+    * @returns {Array} returns set of objects
     */
     static getData(table,columnNames){
-      let headers = [];
-      return [].slice.call(table.querySelectorAll('tbody>tr')).reduce((init,row,index)=>{ 
+      return [].slice.call(table.querySelectorAll('tbody>tr')).reduce((init,row,index)=>{
         init[index]= {};
         [].slice.call(row.children).forEach((td,i)=>{
           let val = td.textContent.trim();
@@ -51,7 +91,7 @@ class HighMapsNPS{
     * Strips header from `table`
     * @param {HTMLTableElement} table - table element
     * @param {Array} columnNames - names of columns in resulting object
-    * @returns {Array} returns object where <key> : <column name> info stored
+    * @returns {Object} returns object where &lt;key> : &lt;column name> info stored
     */
     static getHeaders(table,columnNames){
       let o = {};
@@ -68,14 +108,12 @@ class HighMapsNPS{
    * Note, this method uses a simple `for...in` strategy for enumerating
    * properties.  To ensure only `ownProperties` are copied from source
    * to target and that accessor implementations are copied, use `extend`.
-   *
-   * @method mixin
    * @param {Object} target Target object to copy properties to.
    * @param {Object} source Source object to copy properties from.
    * @return {Object} Target object that was passed as first argument.
    */
   static mixin(target, source) {
-    for (var i in source) {
+    for (let i in source) {
       target[i] = source[i];
     }
     return target;
@@ -83,16 +121,16 @@ class HighMapsNPS{
     /**
     * Makes output for mapChart tooltip point format
     * @params {Array} headers - data to be added to tooltip
-    * @returns {String} 
+    * @returns {String}
     */
     static composeOutput(headers){
-      let a = ['<b>{point.name}</b>: {point.value}'];
+      let a = ['&lt;b>{point.name}&lt;/b>: {point.value}'];
         for (let key in headers){
-        if (key !== "name" && key !== "value"){
-          a.push(`<b>${headers[key]}</b>: {point.${key}}`);
+        if (key !== "name" &amp;&amp; key !== "value"){
+          a.push(`&lt;b>${headers[key]}&lt;/b>: {point.${key}}`);
         }
        }
-      return a.join('<br>');
+      return a.join('&lt;br>');
     }
     /**
     * Creates highmap
@@ -101,7 +139,7 @@ class HighMapsNPS{
     * @param {Object} data - input data for highmap
     * @param {String} map - key for Higchart.maps
     * @param {Array} dataClasses - set of colored groups for map
-    * @param {Array} columnHeaders an array where <key>: column name and <value>:column header
+    * @param {Array} columnHeaders an array where &lt;key>: column name and &lt;value>:column header
     */
     static createMap(options, containerID, data, map, dataClasses,columnHeaders){
       let config = {
@@ -140,13 +178,34 @@ class HighMapsNPS{
                     color: '#FFFFFF',
                     format: '{point.name}'
                 },
-                name: `<b>${columnHeaders.value}</b>`,
+                name: `&lt;b>${columnHeaders.value}&lt;/b>`,
                 tooltip: {
                     pointFormat: HighMapsNPS.composeOutput(columnHeaders)
                 }
             }]
-        }
+        };
       config = HighMapsNPS.mixin(config,options);
       Highcharts.mapChart(containerID, config);
     }
 }
+
+export default HighMapsNPS
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Dec 08 2016 15:32:59 GMT+0300 (Russia TZ 2 Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
