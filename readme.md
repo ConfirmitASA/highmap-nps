@@ -22,8 +22,7 @@ actually the link to the map from HighMaps Map Collection.
 
   `<script src="http://code.highcharts.com/mapdata/custom/europe.js"></script>`
 
- 2. Use map constructor in your script
-
+2. Use map constructor in your script
 ```javascript
 let map = new Reportal.HighMapsNPS({
 	table: document.querySelector('tableid'),
