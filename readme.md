@@ -61,6 +61,7 @@ let map = new Reportal.HighMapsNPS({
 	like `columnNames: ['name','secondary data','value']`
 	* `'...'` - any other columns, you'd like to show on the map tooltip
 - `dataClasses` - highChart.map option <http://api.highcharts.com/highmaps/colorAxis.dataClasses>
+used for coloring your map
 - `containerID`: HTMLElement your map will be rendered to
 - `map` : key for HighChart.map, so you have to copy this `countries/us/custom/us-all-territories` part from `<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>`
 - `options`: set of options for highChart.map, so you can add or change any option you want
