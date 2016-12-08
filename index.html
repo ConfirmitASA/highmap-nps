@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-16">
+  <title></title>
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="highmap-nps.js"></script>
+</head>
+<body>
+  <div id="map"> </div>
+  <table id="confirmit_agg_table_8" class="t8_table Table">
+  <thead>
+    <tr class="t8_tr TableRow">
+      <td class="t8_cc">
+      </td><td class="t8_chc">NPS®</td>
+      <td class="t8_chc">N</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">ALABAMA</td>
+      <td class="t8_dc TableDataCell">82.21</td>
+      <td class="t8_dc TableDataCell">326</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">ALASKA</td>
+      <td class="t8_dc TableDataCell">81.82</td>
+      <td class="t8_dc TableDataCell">396</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">ARIZONA</td>
+      <td class="t8_dc TableDataCell">87.56</td>
+      <td class="t8_dc TableDataCell">434</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">ARKANSAS</td>
+      <td class="t8_dc TableDataCell">88.16</td>
+      <td class="t8_dc TableDataCell">490</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">CALIFORNIA</td>
+      <td class="t8_dc TableDataCell">86.49</td>
+      <td class="t8_dc TableDataCell">370</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">COLORADO</td>
+      <td class="t8_dc TableDataCell">79.56</td>
+      <td class="t8_dc TableDataCell">274</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">CONNECTICUT</td>
+      <td class="t8_dc TableDataCell">85.54</td>
+      <td class="t8_dc TableDataCell">332</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">DELAWARE</td>
+      <td class="t8_dc TableDataCell">83.67</td>
+      <td class="t8_dc TableDataCell">392</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">DISTRICT OF COLUMBIA</td>
+      <td class="t8_dc TableDataCell">84.97</td>
+      <td class="t8_dc TableDataCell">386</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">FLORIDA</td>
+      <td class="t8_dc TableDataCell">77.27</td>
+      <td class="t8_dc TableDataCell">352</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">GEORGIA</td>
+      <td class="t8_dc TableDataCell">81.33</td>
+      <td class="t8_dc TableDataCell">332</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">GUAM</td>
+      <td class="t8_dc TableDataCell">82.57</td>
+      <td class="t8_dc TableDataCell">436</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">HAWAII</td>
+      <td class="t8_dc TableDataCell">84.46</td>
+      <td class="t8_dc TableDataCell">296</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">IDAHO</td>
+      <td class="t8_dc TableDataCell">88.18</td>
+      <td class="t8_dc TableDataCell">406</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">ILLINOIS</td>
+      <td class="t8_dc TableDataCell">83.74</td>
+      <td class="t8_dc TableDataCell">246</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">INDIANA</td>
+      <td class="t8_dc TableDataCell">88.44</td>
+      <td class="t8_dc TableDataCell">398</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">IOWA</td>
+      <td class="t8_dc TableDataCell">76.56</td>
+      <td class="t8_dc TableDataCell">418</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">KANSAS</td>
+      <td class="t8_dc TableDataCell">88.83</td>
+      <td class="t8_dc TableDataCell">376</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">KENTUCKY</td>
+      <td class="t8_dc TableDataCell">84.24</td>
+      <td class="t8_dc TableDataCell">406</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">LOUISIANA</td>
+      <td class="t8_dc TableDataCell">85.64</td>
+      <td class="t8_dc TableDataCell">390</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">MAINE</td>
+      <td class="t8_dc TableDataCell">85.62</td>
+      <td class="t8_dc TableDataCell">292</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">MARYLAND</td>
+      <td class="t8_dc TableDataCell">90.86</td>
+      <td class="t8_dc TableDataCell">372</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">MASSACHUSETTS</td>
+      <td class="t8_dc TableDataCell">87.21</td>
+      <td class="t8_dc TableDataCell">344</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">MICHIGAN</td>
+      <td class="t8_dc TableDataCell">80.00</td>
+      <td class="t8_dc TableDataCell">310</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">MINNESOTA</td>
+      <td class="t8_dc TableDataCell">83.52</td>
+      <td class="t8_dc TableDataCell">352</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">MISSISSIPPI</td>
+      <td class="t8_dc TableDataCell">90.87</td>
+      <td class="t8_dc TableDataCell">482</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">MISSOURI</td>
+      <td class="t8_dc TableDataCell">83.57</td>
+      <td class="t8_dc TableDataCell">426</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">MONTANA</td>
+      <td class="t8_dc TableDataCell">84.88</td>
+      <td class="t8_dc TableDataCell">410</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">NEBRASKA</td>
+      <td class="t8_dc TableDataCell">79.86</td>
+      <td class="t8_dc TableDataCell">288</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">NEVADA</td>
+      <td class="t8_dc TableDataCell">83.60</td>
+      <td class="t8_dc TableDataCell">378</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">NEW HAMPSHIRE</td>
+      <td class="t8_dc TableDataCell">91.79</td>
+      <td class="t8_dc TableDataCell">414</td>
+    </tr>
+   <tr class="t8_tr TableRow">
+      <td class="t8_rhc">NEW JERSEY</td>
+      <td class="t8_dc TableDataCell">80.81</td>
+      <td class="t8_dc TableDataCell">344</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">NEW MEXICO</td>
+      <td class="t8_dc TableDataCell">86.54</td>
+      <td class="t8_dc TableDataCell">520</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">NEW YORK</td>
+      <td class="t8_dc TableDataCell">82.31</td>
+      <td class="t8_dc TableDataCell">294</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">NORTH CAROLINA</td>
+      <td class="t8_dc TableDataCell">81.42</td>
+      <td class="t8_dc TableDataCell">366</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">NORTH DAKOTA</td>
+      <td class="t8_dc TableDataCell">76.40</td>
+      <td class="t8_dc TableDataCell">322</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">OHIO</td>
+      <td class="t8_dc TableDataCell">77.40</td>
+      <td class="t8_dc TableDataCell">292</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">OKLAHOMA</td>
+      <td class="t8_dc TableDataCell">85.25</td>
+      <td class="t8_dc TableDataCell">366</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">OREGON</td>
+      <td class="t8_dc TableDataCell">85.03</td>
+      <td class="t8_dc TableDataCell">374</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">PENNSYLVANIA</td>
+      <td class="t8_dc TableDataCell">93.45</td>
+      <td class="t8_dc TableDataCell">458</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">RHODE ISLAND</td>
+      <td class="t8_dc TableDataCell">87.75</td>
+      <td class="t8_dc TableDataCell">408</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">SOUTH CAROLINA</td>
+      <td class="t8_dc TableDataCell">85.85</td>
+      <td class="t8_dc TableDataCell">424</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">SOUTH DAKOTA</td>
+      <td class="t8_dc TableDataCell">81.51</td>
+      <td class="t8_dc TableDataCell">292</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">TENNESSEE</td>
+      <td class="t8_dc TableDataCell">87.10</td>
+      <td class="t8_dc TableDataCell">496</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">TEXAS</td>
+      <td class="t8_dc TableDataCell">88.95</td>
+      <td class="t8_dc TableDataCell">362</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">UTAH</td>
+      <td class="t8_dc TableDataCell">75.74</td>
+      <td class="t8_dc TableDataCell">272</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">VERMONT</td>
+      <td class="t8_dc TableDataCell">85.19</td>
+      <td class="t8_dc TableDataCell">324</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">VIRGINIA</td>
+      <td class="t8_dc TableDataCell">80.40</td>
+      <td class="t8_dc TableDataCell">398</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">WASHINGTON</td>
+      <td class="t8_dc TableDataCell">83.87</td>
+      <td class="t8_dc TableDataCell">310</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">WEST VIRGINIA</td>
+      <td class="t8_dc TableDataCell">87.11</td>
+      <td class="t8_dc TableDataCell">574</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">WISCONSIN</td>
+      <td class="t8_dc TableDataCell">87.66</td>
+      <td class="t8_dc TableDataCell">470</td>
+    </tr>
+    <tr class="t8_tr TableRow">
+      <td class="t8_rhc">WYOMING</td>
+      <td class="t8_dc TableDataCell">84.14</td>
+      <td class="t8_dc TableDataCell">290</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
