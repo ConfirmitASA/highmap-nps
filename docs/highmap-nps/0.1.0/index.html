@@ -47,42 +47,71 @@
 
     <section class="readme">
         <article><h1>HighMap NPS</h1><p>Creates a colored HighMap with data provided in your HTMLTable</p>
-<h2>Usage</h2><p>Requires 'jQuery' and 'highmaps.js'</p>
-<pre class="prettyprint source lang-javascript"><code>let map = new HighMapsNPS({
-    table: document.querySelector('tableid'),
-     columnNames: ['name', 'value', ...],
-     dataClasses: [{
-                  from: 80,
-                  to: 100,
-                  color: '#8bc34a',
-                  name: 'Promoter'
-              },{
-                  from: 60,
-                  to: 80,
-                  color: '#ffc107',
-                  name: 'Passive'
-              },{
-                  from: 0,
-                  to: 60,
-                  color: '#f44336',
-                  name: 'Detractor'
-              }],
-     containerID:'mapContainer',
-     map : 'countries/us/custom/us-all-territories'
-     options: {}
-     })</code></pre><ul>
-<li><code>table</code>: HTML Table element where your data are stored</li>
-<li><code>columnNames</code> <ul>
-<li><code>'name'</code> -required - column which data shows on every map element</li>
-<li><code>'value'</code> -required - column, with your main data, your map will be colored with </li>
-<li><code>'...'</code> - other columns, you'd like to show on the map</li>
+<h2>Usage</h2><ol>
+<li><p>Add this libraries to your html page</p>
+<pre class="prettyprint source lang-javascript"><code>&lt;script src=&quot;https://code.jquery.com/jquery-3.1.1.min.js&quot;>&lt;/script>
+&lt;script src=&quot;https://code.highcharts.com/maps/highmaps.js&quot;>&lt;/script>
+&lt;script src=&quot;path_to/highmap-nps.bundle.js&quot;>&lt;/script>
+&lt;script src=&quot;https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js&quot;>&lt;/script></code></pre><p>The last one <code>&lt;script src=&quot;https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js&quot;&gt;&lt;/script&gt;</code>
+actually the link to the map from HighMaps Map Collection.</p>
+<p>So if u want to use any other map you should change last script <code>src</code>:</p>
+</li>
+<li>Go to <http://code.highcharts.com/mapdata/></li>
+<li>Choose any map you want in <code>javascript</code> format</li>
+<li><p>Paste path to the js file instead of last <code>script</code> <code>src</code></p>
+<p>For example: 
+If u want to use Europe map instead your last <code>&lt;script&gt;</code> should look like: </p>
+<p><code>&lt;script src=&quot;http://code.highcharts.com/mapdata/custom/europe.js&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+<li><p>Use map constructor in your script</p>
+<pre class="prettyprint source lang-javascript"><code>let map = new Reportal.HighMapsNPS({
+ table: document.querySelector('tableid'),
+  columnNames: ['name', 'value', ...],
+  dataClasses: [{
+               from: 80,
+               to: 100,
+               color: '#8bc34a',
+               name: 'Promoter'
+           },{
+               from: 60,
+               to: 80,
+               color: '#ffc107',
+               name: 'Passive'
+           },{
+               from: 0,
+               to: 60,
+               color: '#f44336',
+               name: 'Detractor'
+           }],
+  containerID:'mapContainer',
+  map : 'countries/us/custom/us-all-territories'
+  options: {}
+  })</code></pre></li>
+<li><code>table</code>: HTMLTable element where your data are stored</li>
+<li><p><code>columnNames</code> </p>
+<ul>
+<li><p><code>'name'</code> -required - row headers column which data shows on every map element</p>
+<p>You should always pass <code>name</code> as the first value in <code>columnNames</code> array</p>
+</li>
+<li><p><code>'value'</code> -required - any column, which will be your primary source for data</p>
+<p>If your primary data in column  number 3 you should passed it like 3rd argument
+like <code>columnNames: ['name','secondary data','value']</code></p>
+</li>
+<li><code>'...'</code> - any other columns, you'd like to show on the map tooltip</li>
 </ul>
 </li>
-<li><code>dataClasses</code> - highChart.map option http://api.highcharts.com/highmaps/colorAxis.dataClasses</li>
+<li><code>dataClasses</code> - highChart.map option <http://api.highcharts.com/highmaps/colorAxis.dataClasses>\
+Used for coloring your map</li>
 <li><code>containerID</code>: HTMLElement your map will be rendered to</li>
-<li><code>map</code> : path to javascript file with data about map from http://code.highcharts.com/mapdata/</li>
+<li><code>map</code> : key for HighChart.map, so you have to copy this <code>countries/us/custom/us-all-territories</code> part from <code>&lt;script src=&quot;https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js&quot;&gt;&lt;/script&gt;</code></li>
 <li><code>options</code>: set of options for highChart.map, so you can add or change any option you want</li>
-</ul></article>
+</ol>
+<p>Example:</p>
+<pre class="prettyprint source lang-javascript"><code>options:{
+    title:{
+        text: 'Your Chart Title'
+    }
+}</code></pre></article>
     </section>
 
 
@@ -95,7 +124,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Dec 08 2016 15:32:59 GMT+0300 (Russia TZ 2 Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Dec 08 2016 17:55:27 GMT+0300 (Russia TZ 2 Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
