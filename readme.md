@@ -24,6 +24,7 @@ If u want to use Europe map instead your last `<script>` should look like
 `<script src="http://code.highcharts.com/mapdata/custom/europe.js"></script>`
 
 2. Use map constructor in your script
+
 ```javascript
 let map = new Reportal.HighMapsNPS({
 	table: document.querySelector('tableid'),
