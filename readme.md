@@ -9,19 +9,18 @@ Creates a colored HighMap with data provided in your HTMLTable
 <script src="path_to/highmap-nps.bundle.js"></script>
 <script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>
 ```
-The last one `<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>`
+  The last one `<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>`
 actually the link to the map from HighMaps Map Collection.
 
-So if u want to use any other map you should change last script `src`:
+  So if u want to use any other map you should change last script `src`:
 - Go to <http://code.highcharts.com/mapdata/>
 - Choose any map you want in `javascript` format
 - Paste path to the js file instead of last `script` `src`
 
-For example: 
+  For example: 
+  If u want to use Europe map instead your last `<script>` should look like: 
 
-If u want to use Europe map instead your last `<script>` should look like: 
-
-`<script src="http://code.highcharts.com/mapdata/custom/europe.js"></script>`
+  `<script src="http://code.highcharts.com/mapdata/custom/europe.js"></script>`
 
  2. Use map constructor in your script
 
@@ -60,8 +59,8 @@ let map = new Reportal.HighMapsNPS({
 	If your primary data in column  number 3 you should passed it like 3rd argument
 	like `columnNames: ['name','secondary data','value']`
 	* `'...'` - any other columns, you'd like to show on the map tooltip
-- `dataClasses` - highChart.map option <http://api.highcharts.com/highmaps/colorAxis.dataClasses>
-used for coloring your map
+- `dataClasses` - highChart.map option <http://api.highcharts.com/highmaps/colorAxis.dataClasses>\
+  Used for coloring your map
 - `containerID`: HTMLElement your map will be rendered to
 - `map` : key for HighChart.map, so you have to copy this `countries/us/custom/us-all-territories` part from `<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>`
 - `options`: set of options for highChart.map, so you can add or change any option you want
