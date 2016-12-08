@@ -19,11 +19,12 @@ So if u want to use any other map you should change last script `src`:
 
 For example: 
 
-If u want to use Europe map instead your last `<script>` should look like  
+If u want to use Europe map instead your last `<script>` should look like: 
 
 `<script src="http://code.highcharts.com/mapdata/custom/europe.js"></script>`
 
-2. Use map constructor in your script
+ 2. Use map constructor in your script
+
 ```javascript
 let map = new Reportal.HighMapsNPS({
 	table: document.querySelector('tableid'),
@@ -61,7 +62,7 @@ let map = new Reportal.HighMapsNPS({
 	* `'...'` - any other columns, you'd like to show on the map tooltip
 - `dataClasses` - highChart.map option <http://api.highcharts.com/highmaps/colorAxis.dataClasses>
 - `containerID`: HTMLElement your map will be rendered to
-- `map` : 
+- `map` : key for HighChart.map, so you have to copy this `countries/us/custom/us-all-territories` part from `<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>`
 - `options`: set of options for highChart.map, so you can add or change any option you want
 
 Example:
