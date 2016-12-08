@@ -5,22 +5,24 @@
   <title>Visual test</title>
   <script src="../../node_modules/webcomponents.js/src/HTMLImports/HTMLImports.js"></script>
   <script src="../../node_modules/r-visual-fixture-test/src/visual-fixture-test.js"></script>
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-  <!--script src="../../dist/module.bundle.js"></script-->
+  <script src="../../dist/highmap-nps.bundle.js"></script>
   <!--link rel="stylesheet" href="../../dist/styles.css"-->
 
 
   <script>
-    /*testFixture('fixture-name',function(){
-      var tableTest = new Reportal.SortTable({
-        source: document.querySelector('table'),
-        data: [['foo','bar']]
-      });
-    });*/
+    testFixture(function(){
+        let map = new Reportal.HighMapsNPS({table: document.querySelector('table.t8_table'), columnNames: ['name', 'value', 'count'], containerID: 'map', map : 'countries/us/custom/us-all-territories'})
+    });
   </script>
 
-  <!--link rel="import" href="../__tests__/fixtures/fixture-name.html"-->
+  <link rel="import" href="../__tests__/fixtures/table.html">
 
 </head>
-<body></body>
+<body>
+  <div id="map"></div>
+</body>
 </html>

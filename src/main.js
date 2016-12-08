@@ -3,4 +3,8 @@
  */
 
 import HighMapsNPS from "./highmaps-nps";
-export default HighMapsNPS
+window.Reportal = window.Reportal || {}
+HighMapsNPS.mixin(window.Reportal,{
+  HighMapsNPS
+});
+export default Reportal
