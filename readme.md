@@ -13,7 +13,7 @@ Creates a colored HighMap with data provided in your HTMLTable
 actually the link to the map from HighMaps Map Collection.
 
   So if u want to use any other map you should change last script `src`:
-- Go to (http://code.highcharts.com/mapdata/)
+- Go to http://code.highcharts.com/mapdata/
 - Choose any map you want in `javascript` format
 - Paste path to the js file instead of last `script` `src`
 
