@@ -13,16 +13,41 @@
   <!--link rel="stylesheet" href="../../dist/styles.css"-->
 
 
-  <script>
-    testFixture(function(){
-        let map = new Reportal.HighMapsNPS({table: document.querySelector('table.t8_table'), columnNames: ['name', 'value', 'count'], containerID: 'map', map : 'countries/us/custom/us-all-territories'})
-    });
-  </script>
 
   <link rel="import" href="../__tests__/fixtures/table.html">
+  <link rel="import" href="../__tests__/fixtures/table2.html">
 
 </head>
 <body>
   <div id="map"></div>
+  <script>
+    testFixture('table', function(){
+      let map = new Reportal.HighMapsNPS({table: document.querySelector('.table'), columnNames: ['name', 'value', 'count'], containerID: 'map', map : 'countries/us/custom/us-all-territories'})
+    });
+    testFixture('table2', function(){
+      let map = new Reportal.HighMapsNPS({
+        table: document.querySelector('.table2'),
+        columnNames: ['name', 'count', 'value'],
+        containerID: 'map',
+        dataClasses : [{
+          from: 0,
+          to: 300,
+          color: 'red',
+          name: 'Insignificant'
+        },{
+          from: 300,
+          to: 400,
+          color: '#ffc107',
+          name: 'mild-significant'
+        },{
+          from: 400,
+          to: Infinity,
+          color: 'green',
+          name: 'Significant'
+        }],
+        map : 'countries/us/custom/us-all-territories'
+      })
+    });
+  </script>
 </body>
 </html>
