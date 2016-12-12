@@ -26,7 +26,7 @@ class HighMapsNPS{
               }], map,options}={}){
       if(typeof Highcharts == undefined){throw new Error('Highcharts must be declared. Probably they are missing')}
       if(typeof Highcharts.maps == undefined){throw new Error('HighMaps must be loaded. Probably they are missing')}
-      if(table instanceof HTMLTableElement) {throw new Error('Table is missing')}
+      if(!(table instanceof HTMLTableElement)) {throw new Error('Table is missing')}
       let data = this.constructor.getData(table,columnNames);
       this.constructor.createMap(options, containerID, data, map, dataClasses,this.constructor.getHeaders(table,columnNames));
     }
@@ -130,7 +130,8 @@ class HighMapsNPS{
               dataClasses
             },
 
-            series: [{
+            series: [
+            {
                 data,
                 mapData: Highcharts.maps[map],
                 joinBy: ['name', 'name'],

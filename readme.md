@@ -1,15 +1,23 @@
-# HighMap NPS #
+# HighMap NPS
 Creates a colored HighMap with data provided in your HTMLTable
 
-## Usage ##
-1. Add this libraries to your html page
+## Usage
+##### Adding libraries
+If you already use HighCharts add this scripts to your html page
+```javascript
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="path_to/highmap-nps.bundle.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>
+```
+
+If you don't use HighCharts add
 ```javascript
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://code.highcharts.com/maps/highmaps.js"></script>
 <script src="path_to/highmap-nps.bundle.js"></script>
 <script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>
 ```
-  The last one `<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>`
+  The `<script src="https://code.highcharts.com/mapdata/countries/us/custom/us-all-territories.js"></script>`
 actually the link to the map from HighMaps Map Collection.
 
   So if u want to use any other map you should change last script `src`:
@@ -22,7 +30,8 @@ actually the link to the map from HighMaps Map Collection.
 
   `<script src="http://code.highcharts.com/mapdata/custom/europe.js"></script>`
 
-2. Use map constructor in your script
+##### Adding map to your page
+ Use map constructor in your script
 ```javascript
 let map = new Reportal.HighMapsNPS({
 	table: document.querySelector('tableid'),
